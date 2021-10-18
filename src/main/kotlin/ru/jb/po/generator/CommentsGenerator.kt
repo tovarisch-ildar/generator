@@ -21,7 +21,7 @@ class CommentsGenerator {
     fun run() {
         val issues = api.issuesGet(null, "id", null, null)
         val now = LocalDateTime.now()
-        val count = Random.nextInt(RandomConfig.MAX_TASKS.value)
+        val count = Random.nextInt(RandomConfig.MAX_COMMENTS.value)
         for (i in 0..count step 1) {
             val issue = issues[Random.nextInt(issues.size)]
             val comment = IssueComment()

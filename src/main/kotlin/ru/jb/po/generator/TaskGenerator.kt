@@ -20,9 +20,12 @@ class TaskGenerator {
     val api = DefaultApi(apiClient)
 
     fun run() {
+        for (a in YoutrackConfig.values()) {
+            println("${a.name} == ${a.value}")
+        }
         val projects = api.adminProjectsGet("id,name", null, null)
         val now = LocalDateTime.now()
-        val count = Random.nextInt(RandomConfig.MAX_COMMENTS.value)
+        val count = Random.nextInt(RandomConfig.MAX_TASKS.value)
         for (i in 0..count step 1) {
             val issue = Issue()
             val nextInt = Random.nextInt(projects.size)
