@@ -51,6 +51,13 @@ dependencies {
     implementation("io.swagger:swagger-annotations:1.6.3")
     implementation("io.gsonfire:gson-fire:1.8.5")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+    testImplementation("uk.org.webcompere:system-stubs-jupiter:1.1.0")
+    testImplementation(kotlin("test"))
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.named("compileKotlin") {
